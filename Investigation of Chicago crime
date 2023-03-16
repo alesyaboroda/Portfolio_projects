@@ -1,0 +1,16 @@
+For this project we gonna explore dataset "Crimes - 2001 to Present" year located on Chicago data portal,
+availible via this link: https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-Present/ijzp-q8t2
+
+This dataset is quite big, consisting of millions of rows and weighting almost 2 gb, so my plans to use 
+Google Bigquerry free sandbox for this task is not as simple as it usualy is. first of all, i cannot 
+upload it directly and secondary, querying it from my google drive takes up unreasonable amount of time.
+On top it all Bigquery can not parse columns "Date" an "Updated on" as datetime or timestamp data type,
+only as string, which might stop us from ordering rows in chronological order correctly.
+
+My solution is simple, we need transform dataset so columns "Date" and "Updated on" have format, recognisable
+by bigquery as datetime(YYYY-MM-DD HH-MM-SS). Separate dataset into 23 csv files, one year worth of crime in 
+each. This will allow us to query data in bigquery, do it in reasonable time and ease exploration or 
+visualisation of it by the year.
+
+For this task we gonna use python, in particular pandas. This task is not what i used to do with pandas, but 
+with a little googling i managed to do it without much trouble. for all interested  
