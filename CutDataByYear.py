@@ -19,7 +19,7 @@ start = a.Date.min()
 end = a.Date.max() + 1
 iteration = start
 
-# Loop that saves
+# Loop that separates and saves data by the year
 while True:
     df = df.set_index("Date")
     b = df.loc[str(iteration)]
